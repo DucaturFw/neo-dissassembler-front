@@ -144,6 +144,7 @@ height:40vh;
 `
 const TitleStatus = styled.span`
 color:green;
+font-size:22px;
 margin-bottom:50px;
 `;
 

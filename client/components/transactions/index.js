@@ -214,7 +214,7 @@ const Wrap = styled.div`
 
 `;
 const Scroll = styled.div`
-overflow-x: scroll;
+overflow-x: hidden;
 height:75vh;
 `
 const StyledLink = styled(Link)`
