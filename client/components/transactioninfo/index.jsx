@@ -49,7 +49,7 @@ class TransactionsInfo extends React.Component {
                 <BlockInfo>
                     <Block>
                         <h4>
-                            Список инструкций
+                        List of instructions
               {' '}
                         </h4>
                         <BlockInstructions>
