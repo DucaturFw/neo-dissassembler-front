@@ -5,6 +5,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #0D1539;
+  font-family: 'Roboto', sans-serif;
 `;
 
 

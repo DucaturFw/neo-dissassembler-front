@@ -8,121 +8,121 @@ import FA from 'react-fontawesome';
 import { fetchTransactionsInfo } from '../../actions/transactioninfo';
 
 const data = [
-  {
-    address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
-    value: '100 NEO',
-  },
-  {
-    address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
-    value: '100 NEO',
-  }, {
-    address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
-    value: '100 NEO',
-  },
+    {
+        address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
+        value: '100 NEO',
+    },
+    {
+        address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
+        value: '100 NEO',
+    }, {
+        address: 'AZT9LnyHkFgmvwPpbeLVmzWko6KwZi8Tjo',
+        value: '100 NEO',
+    },
 
 
 ];
 
 class TransactionsInfo extends React.Component {
-  componentWillMount() {
-    this.props.fetchTransactionsInfo(this.props.match.params.id);
-  }
-
-
-  info(scriptinfo, disassemble) {
-    return (
-      <Fragment>
-        <Title>
-          <h2>
-Transaction info
-            {' '}
-          </h2>
-          <h3>
-            {scriptinfo.type}
-            {' '}
-|
-            {' '}
-            {scriptinfo.txid}
-            {' '}
-          </h3>
-        </Title>
-        <BlockInfo>
-          <Block>
-            <h4>
-Список инструкций
-              {' '}
-            </h4>
-            <BlockInstructions>
-              {disassemble.map(item => (
-                <p>
-                  {item.name}
-                </p>
-              ))}
-            </BlockInstructions>
-          </Block>
-          <Block>
-            <TitleStatus>
-                            Статус : SUCCESS
-            </TitleStatus>
-            <Scroll>
-              <Table>
-                <Table.Header>
-                  <Table.Row>
-                    <Table.HeaderCell>
-Получатель
-                      {' '}
-                    </Table.HeaderCell>
-                    <Table.HeaderCell>
-Количество
-                    </Table.HeaderCell>
-                  </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                  {data.map(item => (
-                    <Table.Row>
-                      <Table.Cell>
-                        {item.address}
-                      </Table.Cell>
-                      <Table.Cell>
-                        {item.value}
-                      </Table.Cell>
-                    </Table.Row>))}
-
-                </Table.Body>
-              </Table>
-            </Scroll>
-          </Block>
-
-        </BlockInfo>
-      </Fragment>
-    );
-  }
-
-  render() {
-    const { scriptinfo, disassemble } = this.props;
-    if (this.props.preloader) {
-      return (
-        <Wrap>
-          <LoadingWrap>
-            <FA name="spinner" size="4x" spin />
-          </LoadingWrap>
-        </Wrap>
-      );
+    componentWillMount() {
+        this.props.fetchTransactionsInfo(this.props.match.params.id);
     }
-    return (
-      <Wrap>
-        {this.info(scriptinfo, disassemble)}
 
-      </Wrap>
-    );
-  }
+
+    info(scriptinfo, disassemble) {
+        return (
+            <Fragment>
+                <Title>
+                    <h2>
+                        Transaction info
+            {' '}
+                    </h2>
+                    <h3>
+                        {scriptinfo.type}
+                        {' '}
+                        |
+            {' '}
+                        {scriptinfo.txid}
+                        {' '}
+                    </h3>
+                </Title>
+                <BlockInfo>
+                    <Block>
+                        <h4>
+                            Список инструкций
+              {' '}
+                        </h4>
+                        <BlockInstructions>
+                            {disassemble.map(item => (
+                                <p>
+                                    {item.name}
+                                </p>
+                            ))}
+                        </BlockInstructions>
+                    </Block>
+                    <Block>
+                        <TitleStatus>
+                            Status : SUCCESS
+            </TitleStatus>
+                        <Scroll>
+                            <Table > 
+                                <Table.Header>
+                                    <Table.Row>
+                                        <Table.HeaderCell>
+                                        Sent to
+                      {' '}
+                                        </Table.HeaderCell>
+                                        <Table.HeaderCell>
+                                            Amount
+                    </Table.HeaderCell>
+                                    </Table.Row>
+                                </Table.Header>
+                                <Table.Body>
+                                    {data.map(item => (
+                                        <Table.Row>
+                                            <Table.Cell>
+                                                {item.address}
+                                            </Table.Cell>
+                                            <Table.Cell>
+                                                {item.value}
+                                            </Table.Cell>
+                                        </Table.Row>))}
+
+                                </Table.Body>
+                            </Table>
+                        </Scroll>
+                    </Block>
+
+                </BlockInfo>
+            </Fragment>
+        );
+    }
+
+    render() {
+        const { scriptinfo, disassemble } = this.props;
+        if (this.props.preloader) {
+            return (
+                <Wrap>
+                    <LoadingWrap>
+                        <FA name="spinner" size="4x" spin />
+                    </LoadingWrap>
+                </Wrap>
+            );
+        }
+        return (
+            <Wrap>
+                {this.info(scriptinfo, disassemble)}
+
+            </Wrap>
+        );
+    }
 }
 
 const mapDispatchtoProps = dispatch => bindActionCreators({ fetchTransactionsInfo }, dispatch);
 const mapStateToProps = state => ({
-  preloader: state.transactioninfo.preloader,
-  scriptinfo: state.transactioninfo.scriptinfo,
-  disassemble: state.transactioninfo.disassemble,
+    preloader: state.transactioninfo.preloader,
+    scriptinfo: state.transactioninfo.scriptinfo,
+    disassemble: state.transactioninfo.disassemble,
 });
 
 
@@ -137,7 +137,6 @@ const LoadingWrap = styled.div`
 const Wrap = styled.div`
  width:100%;
  color:white;
- font-size:1em;
 `;
 
 const Title = styled.div`
@@ -175,10 +174,3 @@ font-size:22px;
 margin-bottom:50px;
 `;
 
-const StyledLink = styled(Link)`
-    color: ${props => (props.active ? '#8BE7FF' : '#6987B9')};
-    &:hover, &:active {
-        color: #8BE7FF;
-        text-decoration: none;
-    }
-`;

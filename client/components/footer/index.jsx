@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <Wrap>
-        <p> Created by Ducatur</p>
+        <a href="https://ducatur.com/"> Created with ❤️ by Ducatur on 🌎 in 2018</a>
       </Wrap>
     );
   }
@@ -18,5 +18,6 @@ const Wrap = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    font-family: Roboto Mono;
     color:white;
 `;

@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
       <Wrap>
         <Logo>
-          <img src={ducatur} />
+        <a href="https://ducatur.com/" > <img src={ducatur} /> </a>
         </Logo>
         <SearchInput>
           <Input style={{ width: '400px' }} focus placeholder="Search..." />
