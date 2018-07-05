@@ -4,12 +4,19 @@ import styled from 'styled-components';
 class Footer extends React.Component {
   render() {
     return (
-      <Wrap />
+      <Wrap>
+        <p> Created by Ducatur</p>
+      </Wrap>
     );
   }
 }
 export default Footer;
 
 const Wrap = styled.div`
-    height: 20px;
+    display:flex;
+    height: 30px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
 `;

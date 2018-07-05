@@ -22,7 +22,7 @@ export default class App extends Component {
               <Header />
               <MainContent>
                 <Route exact path="/" component={Transactions} />
-                <Route exact path="/transaction" component={Transactioninfo} />
+                <Route exact path="/transaction/:id" component={Transactioninfo} />
               </MainContent>
               <Footer />
             </Container>

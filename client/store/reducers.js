@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 
 
-import explorer from '../reducers/explorer-reducer';
+import transaction from '../reducers/transaction-reducer';
+import transactioninfo from '../reducers/transactioninfo-reducer';
 
 export const rootReducer = combineReducers({
-  explorer,
+  transaction,
+  transactioninfo,
 });
