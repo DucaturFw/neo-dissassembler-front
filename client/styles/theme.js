@@ -4,8 +4,8 @@ const Theme = {
       main: '#0D1539',
 
     },
-   
-  }
+
+  },
 };
 
 export default Theme;

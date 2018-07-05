@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 import theme from './styles/theme';
 import './styles/styles.css';
 
-import Container from './components/container/index'
+import Container from './components/container/index';
 import Header from './components/header';
 import Footer from './components/footer';
 import MainContent from './components/maincontent/index';
@@ -18,19 +18,17 @@ export default class App extends Component {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-              <Container>
-                <Header />
-                <MainContent >
-                  <Route exact path="/" component={Transactions} />
-                  <Route exact path="/transaction" component={Transactioninfo} />
-                </MainContent >
-                <Footer />
-              </Container>
+            <Container>
+              <Header />
+              <MainContent>
+                <Route exact path="/" component={Transactions} />
+                <Route exact path="/transaction" component={Transactioninfo} />
+              </MainContent>
+              <Footer />
+            </Container>
           </Switch>
         </Router>
       </ThemeProvider>
     );
   }
 }
-
-

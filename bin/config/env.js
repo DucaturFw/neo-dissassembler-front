@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
 
-const params = require('../../config.json');
 
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
@@ -62,12 +61,7 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
 // injected into the application via DefinePlugin in Webpack configuration.
 const REACT_APP = /^REACT_APP_/i;
 
-function getConfigParams() {
-  return Object.keys(params).reduce((res, key, item) => {
-    res[key] = JSON.stringify(params[key]);
-    return res;
-  }, {});
-}
+
 
 function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
@@ -93,8 +87,7 @@ function getClientEnvironment(publicUrl) {
     'process.env': Object.keys(raw).reduce((env, key) => {
       env[key] = JSON.stringify(raw[key]);
       return env;
-    }, {}),
-    ...getConfigParams(),
+    }, {})
   };
 
   return { raw, stringified };
