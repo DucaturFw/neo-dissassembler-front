@@ -1,14 +1,13 @@
 import {
   FETCH_TRANSACTION_INFO_START,
   FETCH_TRANSACTION_INFO_SUCCESS,
-  FETCH_TRANSACTIONS_INFO_FAILED,
-}
-  from '../constant/transactioninfo-consts';
+  FETCH_TRANSACTIONS_INFO_FAILED
+} from '../constant/transactioninfo-consts';
 
 const initialState = {
   preloader: false,
   scriptinfo: [],
-  disassemble: [],
+  disassemble: []
 };
 export default function transactionInfoReducer(state = initialState, action) {
   switch (action.type) {
@@ -19,7 +18,7 @@ export default function transactionInfoReducer(state = initialState, action) {
         ...state,
         preloader: false,
         scriptinfo: action.transactioninfo,
-        disassemble: action.disassemble,
+        disassemble: action.disassemble
       };
     case FETCH_TRANSACTIONS_INFO_FAILED:
       return { ...state, preloader: false };

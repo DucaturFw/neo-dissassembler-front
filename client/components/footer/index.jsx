@@ -13,11 +13,11 @@ class Footer extends React.Component {
 export default Footer;
 
 const Wrap = styled.div`
-    display:flex;
-    height: 30px;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    font-family: Roboto Mono;
-    color:white;
+  display: flex;
+  height: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto Mono;
+  color: white;
 `;

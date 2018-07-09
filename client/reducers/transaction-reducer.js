@@ -1,12 +1,11 @@
 import {
   FETCH_TRANSACTIONS_START,
   FETCH_TRANSACTIONS_SUCCESS,
-  FETCH_TRANSACTIONS_FAILED,
-}
-  from '../constant/transaction-consts';
+  FETCH_TRANSACTIONS_FAILED
+} from '../constant/transaction-consts';
 
 const initialState = {
-  preloader: false,
+  preloader: false
 };
 export default function transactionReducer(state = initialState, action) {
   switch (action.type) {
@@ -14,7 +13,8 @@ export default function transactionReducer(state = initialState, action) {
       return { ...state, preloader: true };
     case FETCH_TRANSACTIONS_SUCCESS:
       return {
-        ...state, preloader: false,
+        ...state,
+        preloader: false
       };
     case FETCH_TRANSACTIONS_FAILED:
       return { ...state, preloader: false };
